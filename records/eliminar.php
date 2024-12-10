@@ -2,7 +2,6 @@
 include('../app/config.php');
 include('../layout/sessiones.php');
 include('../app/controllers/record/showData.php');
-include('../app/controllers/pacientes/update_Paciente.php');
 include('../layout/superior.php');
 ?>
 
@@ -23,14 +22,13 @@ include('../layout/superior.php');
                 <div class="col-md-11">
                     <div class="card card-danger">
                         <div class="card-header">
-                            <h3 class="card-title">¿Seguro que desea Eliminar el Record de : <?php echo $nombres_paciente?> ?</h3>
+                            <h3 class="card-title">¿Seguro que desea Eliminar el Record de : <?php echo $nombre_paciente?> ?</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
                                         class="fas fa-minus"></i>
                                 </button>
                             </div>
-                            <!-- /.card-tools -->
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

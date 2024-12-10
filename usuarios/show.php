@@ -2,10 +2,7 @@
 include('../app/config.php');
 include('../layout/sessiones.php');
 include('../layout/superior.php');
-include('../app/controllers/usuarios/showDataControllerUser.php');
-
-
-?>
+include('../app/controllers/usuarios/showDataUser.php');?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -15,12 +12,10 @@ include('../app/controllers/usuarios/showDataControllerUser.php');
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">Datos del Personal</h1>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.content-header -->
-
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
@@ -35,9 +30,7 @@ include('../app/controllers/usuarios/showDataControllerUser.php');
                                         class="fas fa-minus"></i>
                                 </button>
                             </div>
-                            <!-- /.card-tools -->
                         </div>
-                        <!-- /.card-header -->
                         <div class="card-body">
                             <!--formulario-->
                             <form action="" method="post">
@@ -93,11 +86,9 @@ include('../app/controllers/usuarios/showDataControllerUser.php');
                             </form>
 
                         </div>
-                        <!-- /.card-body -->
                     </div>
                 </div>
             </div>
-            <!-- /.content -->
         </div>
     </div>
 </div>

@@ -24,7 +24,7 @@
     <link rel="stylesheet"
         href="<?php echo $url ?>/public/templates/AdminLTE-3.2.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- fullCalendar -->
-    <link rel="stylesheet" href="<?php echo $url ?>/public/templates/AdminLTE-3.2.0/plugins/fullcalendar/main.css">
+    <link rel="stylesheet" href="<?php echo $url ?>/public/css/pagina404.css">
     <!-- jQuery -->
     <script src="<?php echo $url ?>/public/templates/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
 
@@ -32,13 +32,7 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!-- <script>
-            Swal.fire({
-                title: "Bienvenidos al sistema",
-                text: "",
-                icon: "success"
-            });
-        </script> -->
+
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
@@ -232,13 +226,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?php echo $url ?>/compras/listar.php" class="nav-link">
+                                    <a href="<?php echo $url ?>/pagesError/facturas.php" class="nav-link">
                                         <i class="far fa-circle text-orange nav-icon"></i>
                                         <p>Listado de Fatuas</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo $url ?>/compras/nueva.php" class="nav-link">
+                                    <a href="<?php echo $url ?>/pagesError/facturas.php" class="nav-link">
                                         <i class="far fa-circle text-orange nav-icon"></i>
                                         <p>Nueva Factura</p>
                                     </a>

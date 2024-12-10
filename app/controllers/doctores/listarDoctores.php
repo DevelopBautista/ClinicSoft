@@ -1,6 +1,6 @@
 <?php
 
-$sql = "select dr.codigo,dr.nombre_dr,dr.especialidad,dr.fecha_ingreso
+$sql = "select dr.id_doctor,dr.codigo,dr.nombre_dr,dr.especialidad,dr.fecha_ingreso
         from tb_doctores as dr ";
 
 $query = $pdo->prepare($sql);

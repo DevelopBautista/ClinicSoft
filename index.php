@@ -12,17 +12,16 @@ include('layout/superior.php'); ?>
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                <!--aqui va todo lo del menu principal-->
+                    <!--aqui va todo lo del menu principal-->
 
-                
+
                 </div>
 
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+            </div>
+        </div>
 
     </div>
-   
-    <!-- /.content -->
+
 </div>
 
 <aside class="control-sidebar control-sidebar-dark">

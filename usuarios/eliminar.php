@@ -2,7 +2,7 @@
 include('../app/config.php');
 include('../layout/sessiones.php');
 include('../layout/superior.php');
-include('../app/controllers/usuarios/showDataControllerUser.php');
+include('../app/controllers/usuarios/showDataUser.php');
 
 
 ?>
@@ -52,7 +52,7 @@ include('../app/controllers/usuarios/showDataControllerUser.php');
                                         <input type="email" class="form-control" 
                                             value="<?php echo $email; ?>" readonly>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group " >
 
                                         <input type="text" class="form-control" 
                                             value="<?php echo $rol; ?>" readonly>
