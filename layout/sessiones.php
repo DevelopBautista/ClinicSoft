@@ -19,6 +19,7 @@ if (isset($_SESSION['email'])) {
         $rol_tb = $usuario['rol'];
 
     }
+    
 } else {
     header('location:' . $url . '/login/login.php');
 }

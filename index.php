@@ -13,7 +13,7 @@ include('layout/superior.php'); ?>
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <!--aqui va todo lo del menu principal-->
-
+                    
 
                 </div>
 

@@ -8,9 +8,9 @@ $query = $pdo->prepare($sql);
 
 $query->execute();
 
-$pacientes_datos = $query->fetchAll(PDO::FETCH_ASSOC);
+$paciente_datos = $query->fetchAll(PDO::FETCH_ASSOC);
 
-foreach ($pacientes_datos as $datos) {
+foreach ($paciente_datos as $datos) {
     $codigo = $datos['codigo'];
     $nombres_paciente = $datos['nombres_paciente'];
     $sexo = $datos['sexo'];

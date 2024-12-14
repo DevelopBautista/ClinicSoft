@@ -1,8 +1,8 @@
 <?php
 include('../app/config.php');
 include('../layout/sessiones.php');
-include("../app/controllers/roles/listarRoles.php");
 include('../app/controllers/doctores/listarDoctores.php');
+include('../app/controllers/usuarios/listarController.php');
 include('../layout/superior.php');
 
 ?>
@@ -25,7 +25,7 @@ include('../layout/superior.php');
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">Datos del Doctor</h3>
@@ -67,70 +67,27 @@ include('../layout/superior.php');
                                             <input type="text" class="form-control"
                                                 value="<?php echo 'Dr-' . ceros($contadorId); ?>" disabled>
 
-                                            <input type="text" name="codigo"
+                                            <input type="text" id="codigo"
                                                 value="<?php echo 'Dr-' . ceros($contadorId); ?>" hidden>
                                         </div>
-                                        <div class="form-group col-md-7">
-                                            <input type="text" class="form-control" name="nombres_dr"
-                                                placeholder="Nombre Completo" required>
-                                        </div>
-                                    </div>
-
-                                    <!--fila_02-->
-                                    <div class="row">
-                                        <div class="form-group col-md-4">
-                                            <input type="text" class="form-control" name="ced" placeholder="Cedula"
-                                                required>
+                                        <div class="form-group col-md-3">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#modal-buscar_dr">
+                                                <i class="fa fa-search"></i> Buscar Doctor
+                                            </button>
                                         </div>
                                         <div class="form-group col-md-6">
-
-                                            <input type="text" class="form-control" name="tel" placeholder="Telefono"
-                                                required>
+                                            <input type="text" class="form-control" id="nombres">
                                         </div>
-
                                     </div>
 
-                                    <!--fila_03-->
                                     <div class="row">
+                                        <div class="form-group col-md-9">
 
-                                        <div class="form-group col-md-5">
-
-                                            <input type="text" class="form-control" name="email" placeholder="E-Mail"
-                                                required>
-                                        </div>
-
-                                        <div class="form-group col-md-5">
-
-                                            <input type="text" class="form-control" name="espec"
+                                            <input type="text" class="form-control" id="espec"
                                                 placeholder="Especialidad" required>
                                         </div>
                                     </div>
-                                    <!--fila_03-->
-                                    <div class="row">
-                                        <div class="form-group col-md-6">
-
-                                            <input type="text" class="form-control" name="direc" placeholder="direccion"
-                                                required>
-                                        </div>
-                                        <div class="form-group col-md-4">
-                                            <input type="date" class="form-control" name="fech_ingreso" required>
-                                        </div>
-                                        
-                                        <div class="form-group col-md-6">
-                                            <!--codigo para listar Roles-->
-                                            <select name="rol" class="form-control">
-                                                <option>Seleccione Rol</option>
-                                                <?php foreach ($roles_datos as $datos) { ?>
-                                                    <option value="<?php echo $datos['id_rol']; ?>">
-                                                        <?php echo $datos['rol']; ?>
-                                                    </option>
-                                                    <?php
-                                                }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-
                                 </div>
 
                                 <div class="form-group">
@@ -160,3 +117,144 @@ include('../layout/superior.php');
 <!-- /.content-wrapper -->
 <?php include('../layout/mensajes.php'); ?>
 <?php include('../layout/inferior.php'); ?>
+
+
+<!--modal ver doctor-->
+<div class="modal fade" id="modal-buscar_dr">
+    <div class="modal-dialog  modal-xl">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#007bff;color:white">
+                <h4 class="modal-title">Doctores</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                <center>#</center>
+                            </th>
+                            <th>
+                                <center>Nombre</center>
+                            </th>
+                            <th>
+                                <center>Cedula</center>
+                            </th>
+                            <th>
+                                <center>Seleccionar</center>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $contador = 0;
+                        foreach ($usuarios_datos as $datos) {
+                            $id_usuario = $datos['id_usuario'];
+                            $nombres = $datos['nombres'];
+
+                            ?>
+                            <tr>
+                                <td><?php echo $contador += 1; ?></td>
+                                <td><?php echo $datos['nombres']; ?></td>
+                                <td><?php echo $datos['cedula']; ?></td>
+                                <td>
+                                    <button class="btn btn-info btn-md"
+                                        id="btn_seleccionar_dr<?php echo $id_usuario; ?>">Seleccionar</button>
+                                    <!--code para seleccionar-->
+                                    <script>
+                                        $('#btn_seleccionar_dr<?php echo $id_usuario; ?>').click(
+                                            function () {
+                                                var id_usuario = "<?php echo $id_usuario; ?>";
+                                                var nombres = "<?php echo $nombres ?>";
+                                                $('#nombres').val(nombres);
+                                                $('#id_usuario').val(id_usuario);
+
+                                                $('#modal-buscar_dr').modal('toggle');//para destruir el modal
+                                            }
+
+                                        );
+
+                                    </script>
+                                </td>
+
+                            </tr>
+
+                            <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $("#example2").DataTable({
+            /* cambio de idiomas de datatable */
+            "pageLength": 5,
+            language: {
+                "emptyTable": "No hay información",
+                "decimal": "",
+                "info": "Mostrando _START_ a _END_ de _TOTAL_ Doctores",
+                "infoEmpty": "Mostrando 0 to 0 of 0 Doctores",
+                "infoFiltered": "(Filtrado de MAX total Doctores)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "Mostrar _MENU_ Doctores",
+                "loadingRecords": "Cargando...",
+                "processing": "Procesando...",
+                "search": "Buscar:",
+                "zeroRecords": "Sin resultados encontrados",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Ultimo",
+                    "next": "Siguiente",
+                    "previous": "Anterior"
+                }
+            },
+            /* fin de idiomas */
+
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+    });
+
+</script>
+
+<!--script para guardar info en la tb-->
+<script>
+    $('#btnRegistrar').click(function () {
+        var codigo = $('#codigo').val();
+        var id_paciente = $('#id_paciente').val();
+        var dr = $('#dr').val();
+
+        var url = "../app/controllers/doctores/nuevo.php";
+        $.get(url, {
+            codigo: codigo, ta: ta, fc: fc,
+            tp: tp, peso: peso, pr_abdom: pr_abdom,
+            fr: fr, h_enf_actu: h_enf_actu,
+            ant_per_pat: ant_per_pat,
+            ant_fam_pat: ant_fam_pat, habit_toxicos: habit_toxicos,
+            diag: diag, tram: tram, ant_qui: ant_qui,
+            ant_alerg: ant_alerg, tipo_sangre: tipo_sangre,
+            fech_ingreso: fech_ingreso, id_paciente: id_paciente, dr: dr
+
+        }, function (datos) {
+            $('#respuesta').html(datos);
+        });
+
+    });
+
+
+</script>
+
+<div id="respuesta"> </div>

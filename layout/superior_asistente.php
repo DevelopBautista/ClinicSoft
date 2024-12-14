@@ -106,64 +106,14 @@
                                         <p>Nuevo paciente</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="<?php echo $url ?>/records/listar.php" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Record pacientes</p>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
                         <br>
-                        <!--menu_Dr-->
-                        <li class="nav-item ">
-                            <a href="#" class="nav-link active">
-                                <i class="fa-solid fa-user-doctor"></i>
-                                <p>
-                                    Doctores
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="<?php echo $url ?>/doctores/listarDoctores.php" class="nav-link">
-                                        <i class="far fa-circle text-yellow nav-icon"></i>
-                                        <p>Listado de Doctores</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?php echo $url ?>/doctores/nuevoDoctor.php" class="nav-link">
-                                        <i class="far fa-circle text-yellow nav-icon"></i>
-                                        <p>Nuevo Doctor</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <br>
-                        <!--menu_roles-->
-                        <!--- <li class="nav-item ">
-                            <a href="#" class="nav-link active">
-                                <i class="fa-solid fa-address-card"></i>
-                                <p>
-                                    Roles
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="<?php echo $url ?>/roles/listar.php" class="nav-link">
-                                        <i class="far fa-circle text-blue nav-icon"></i>
-                                        <p>Listado de Roles</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?php echo $url ?>/roles/nuevo.php" class="nav-link">
-                                        <i class="far fa-circle text-blue nav-icon"></i>
-                                        <p>Nuevo Rol</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>-->
+
+                        <br>
                         <!--Menu_Consultas-->
                         <li class="nav-item ">
                             <a href="#" class="nav-link active">
@@ -189,30 +139,7 @@
                             </ul>
                         </li>
                         <br>
-                        <!--menu_Personal-->
-                        <li class="nav-item ">
-                            <a href="#" class="nav-link active">
-                                <i class="fa-solid fa-users-gear"></i>
-                                <p>
-                                    Personal
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="<?php echo $url ?>/usuarios/listarUsuarios.php" class="nav-link">
-                                        <i class="far fa-circle text-red nav-icon"></i>
-                                        <p>Listado del Personal</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?php echo $url ?>/usuarios/nuevoUsuario.php" class="nav-link">
-                                        <i class="far fa-circle text-red nav-icon"></i>
-                                        <p>Nuevo Personal</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
                         <br>
                         <!--menu_Facturar-->
                         <li class="nav-item ">

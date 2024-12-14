@@ -311,7 +311,7 @@ include('../layout/superior.php');
                         <div class="form-group col-md-3">
 
                             <input type="text" class="form-control" value="<?php echo $nombres_paciente; ?>"
-                            id="nombre_paciente" readonly placeholder="Nombre del paciente">
+                                id="nombre_paciente" readonly placeholder="Nombre del paciente">
                             <input type="text" id="id_paciente" value="<?php echo $id_paciente; ?>" hidden>
                         </div>
 
@@ -372,7 +372,7 @@ include('../layout/superior.php');
                         $contador = 0;
                         foreach ($pacientes_datos as $datos) {
                             $id_paciente = $datos['id_paciente'];
-                            $nom_paciente=$datos['nombres_paciente'];
+                            $nom_paciente = $datos['nombres_paciente'];
 
                             ?>
                             <tr>
@@ -388,7 +388,7 @@ include('../layout/superior.php');
                                         $('#btn_seleccionar_pac<?php echo $id_paciente; ?>').click(
                                             function () {
                                                 var id_paciente = "<?php echo $id_paciente; ?>";
-                                                var nombres_paciente="<?php echo $nom_paciente?>";
+                                                var nombres_paciente = "<?php echo $nom_paciente ?>";
                                                 $('#nombre_paciente').val(nombres_paciente);
                                                 $('#id_paciente').val(id_paciente);
 
@@ -415,7 +415,6 @@ include('../layout/superior.php');
         </div>
     </div>
 </div>
-<!--modal ver producto fin-->
 
 <script>
     $(function () {
